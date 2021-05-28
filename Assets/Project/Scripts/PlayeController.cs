@@ -30,7 +30,10 @@ namespace Project
             // 入力ベクトルの取得
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");
-            var velocity = new Vector3(horizontal, 0, vertical);
+            var horizontalRotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);
+            var velocity = horizontalRotation * new Vector3(horizontal, 0, vertical);
+            
+            // 速度の取得
             var sprint = Input.GetKey(KeyCode.LeftShift) ? 2 : 1;
             var rotationSpeed = rotateSpeed * Time.fixedDeltaTime;
             
