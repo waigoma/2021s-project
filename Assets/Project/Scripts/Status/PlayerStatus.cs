@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Project
@@ -9,19 +9,51 @@ namespace Project
     [CreateAssetMenu(fileName = "PlayerStatus", menuName = "CreatePlayerStatus")]
     public class PlayerStatus : BaseStatus
     {
+        [SerializeField] private int earnedExp = 0;
         [SerializeField] private int experience;
         [SerializeField] private int reqExp;
         [SerializeField] private int stamina;
+        [SerializeField] private Item equipWeapon;
+        [SerializeField] private Item equipArmor;
 
+        [SerializeField] private ItemDictionary itemDictionary;
+        
+
+        public int Experience
+        {
+            get => experience;
+            set => experience = value;
+        }
         public int Stamina
         {
             get => stamina; 
             set => stamina = value;
         }
 
+        public ItemDictionary GetItemDictionary()
+        {
+            return itemDictionary;
+        }
+
+        public IOrderedEnumerable<KeyValuePair<Item, int>> GetSortItemDictionary()
+        {
+            return itemDictionary.OrderBy(item => item.Key.HiraganaName);
+        }
+        
+        public int SetItemNum(Item tmpItem, int num)
+        {
+            return itemDictionary[tmpItem] = num;
+        }
+
+        public int GetItemNum(Item item)
+        {
+            return itemDictionary[item];
+        }
+
         public void AddExp(int exp)
         {
             experience += exp;
+            earnedExp += exp;
             LevelUp();
         }
 
@@ -36,6 +68,8 @@ namespace Project
             experience -= reqExp;
             // 必要経験値設定
             reqExp = Level * 10;
+            // 経験値リセット
+            experience = 0;
         }
     }
 
