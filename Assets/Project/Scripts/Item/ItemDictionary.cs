@@ -1,5 +1,9 @@
 using Project;
 
-public class ItemDictionary : SerializableDictionary<Item, int>
+namespace Project
 {
+    public class ItemDictionary : SerializableDictionary<Item, int>
+    {
+    }
 }
+
