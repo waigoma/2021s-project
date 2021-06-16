@@ -9,7 +9,7 @@ namespace Project
     [CreateAssetMenu(fileName = "PlayerStatus", menuName = "CreatePlayerStatus")]
     public class PlayerStatus : BaseStatus
     {
-        [SerializeField] private int earnedExp = 0;
+        [SerializeField] private int earnedExp;
         [SerializeField] private int experience;
         [SerializeField] private int reqExp;
         [SerializeField] private int stamina;
@@ -52,7 +52,7 @@ namespace Project
 
         public void AddExp(int exp)
         {
-            experience += exp;
+            Experience += exp;
             earnedExp += exp;
             LevelUp();
         }
@@ -60,16 +60,16 @@ namespace Project
         public void LevelUp()
         {
             // 経験値が必要経験値を超えなければ終了
-            if (experience <= reqExp) return;
+            if (Experience <= reqExp) return;
             
             // レベル +1
             Level++;
             // 経験値レベルアップ計算
-            experience -= reqExp;
+            Experience -= reqExp;
             // 必要経験値設定
             reqExp = Level * 10;
             // 経験値リセット
-            experience = 0;
+            Experience = 0;
         }
     }
 
