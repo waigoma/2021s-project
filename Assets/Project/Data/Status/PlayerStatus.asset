@@ -12,18 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f815d6f3b0587d4c865a9dd7a3d41cb, type: 3}
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
-  characterName: 
-  hp: 0
-  maxHp: 0
-  mp: 0
-  maxMp: 0
-  level: 0
-  agility: 0
-  strength: 0
-  intelligence: 0
+  characterName: "\u3066\u3059\u3068\u3077\u308C\u3044\u3084\u30FC"
+  hp: 100
+  maxHp: 100
+  mp: 20
+  maxMp: 20
+  level: 1
+  agility: 1
+  strength: 1
+  intelligence: 1
   earnedExp: 0
   experience: 0
-  reqExp: 0
+  reqExp: 10
   stamina: 0
   equipWeapon: {fileID: 0}
   equipArmor: {fileID: 0}
+  itemDictionary:
+    m_keys: []
+    m_values: 
