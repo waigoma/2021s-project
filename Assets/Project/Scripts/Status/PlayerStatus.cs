@@ -24,6 +24,13 @@ namespace Project
             get => experience;
             set => experience = value;
         }
+
+        public int ReqExp
+        {
+            get => reqExp;
+            set => reqExp = value;
+        }
+        
         public int Stamina
         {
             get => stamina; 
@@ -60,14 +67,14 @@ namespace Project
         public void LevelUp()
         {
             // 経験値が必要経験値を超えなければ終了
-            if (Experience <= reqExp) return;
+            if (Experience <= ReqExp) return;
             
             // レベル +1
             Level++;
             // 経験値レベルアップ計算
-            Experience -= reqExp;
+            Experience -= ReqExp;
             // 必要経験値設定
-            reqExp = Level * 10;
+            ReqExp = Level * 10;
             // 経験値リセット
             Experience = 0;
         }
