@@ -9,9 +9,17 @@ namespace Project
         [SerializeField] private Image greenGauge;
         [SerializeField] private Image redGauge;
 
-        private PlayerStatus playerStatus;
+        [SerializeField] private PlayerStatus playerStatus;
         private Tween redGaugeTween;
 
+        public void SetGauge()
+        {
+            var fillAmount = (float)playerStatus.Hp / playerStatus.MaxHp;
+            greenGauge.fillAmount = fillAmount;
+            redGauge.fillAmount = fillAmount;
+        }
+
+        // HPを減らす前に呼ぶこと
         public void GaugeReduction(float reductionValue, float time = 1f)
         {
             var valueFrom = (float)playerStatus.Hp / playerStatus.MaxHp;
