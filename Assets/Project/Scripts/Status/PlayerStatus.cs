@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Project
 {
     [Serializable]
-    [CreateAssetMenu(fileName = "PlayerStatus", menuName = "CreatePlayerStatus")]
+    [CreateAssetMenu(fileName = "PlayerStatus", menuName = "Status/CreatePlayerStatus")]
     public class PlayerStatus : BaseStatus
     {
         [SerializeField] private int earnedExp;

@@ -50,7 +50,22 @@ namespace Project
             // 移動速度をAnimatorに反転
             animator.SetFloat("Speed", velocity.magnitude * sprint, 0.1f, Time.fixedDeltaTime);
             
+            // 左クリックで攻撃
+            if (Input.GetMouseButton(0))
+            {
+                animator.SetBool("Attack1", true);
+            }
             
+        }
+
+        void Attack1Start()
+        {
+            
+        }
+
+        void Attack1End()
+        {
+            animator.SetBool("Attack1", false);
         }
     }
     

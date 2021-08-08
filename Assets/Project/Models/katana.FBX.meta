@@ -3,7 +3,17 @@ guid: 51c6bcef94f8dca489819ecc3a58122a
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Chrome
+    second: {fileID: 2100000, guid: 087e05669467ebf4795350df7ecea312, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handgrip
+    second: {fileID: 2100000, guid: df9655cab03e8c842b1b0316770cdfe1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

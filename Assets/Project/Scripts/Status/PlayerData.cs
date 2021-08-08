@@ -17,7 +17,7 @@ namespace Project
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                OnDamage(10);
+                // OnDamage(10);
                 Debug.Log($"{playerStatus.CharacterName} : {playerStatus.Hp}");
             }
             else if (Input.GetButtonDown("Fire2"))

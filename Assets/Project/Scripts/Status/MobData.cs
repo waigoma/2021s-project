@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Project
 {
-    public class PlayerData : MonoBehaviour
+    public class MobData : MonoBehaviour
     {
-        [SerializeField]private PlayerStatus playerStatus;
+        [SerializeField]private MobStatus mobStatus;
 
         private HpGauge hpGauge;
 
@@ -15,21 +15,10 @@ namespace Project
 
         void Update()
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                // OnDamage(10);
-                Debug.Log($"{playerStatus.CharacterName} : {playerStatus.Hp}");
-            }
-            else if (Input.GetButtonDown("Fire2"))
-            {
-                Debug.Log($"{playerStatus.CharacterName} : {playerStatus.Hp}");
-            }
         }
 
         void OnDamage(int dmg)
         {
-            hpGauge.GaugeReduction(dmg);
-            playerStatus.Hp -= dmg;
         }
     }
 }
