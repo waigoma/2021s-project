@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Project
 {
@@ -7,6 +8,7 @@ namespace Project
     [RequireComponent(typeof(Rigidbody))]
     public class MobController : MonoBehaviour
     {
+        [SerializeField] private MobStatus _mobStatus;
         private Animator _animator;
         private CapsuleCollider _capsuleCollider;
         private Rigidbody _rigidbody;
@@ -26,6 +28,7 @@ namespace Project
             if (other.CompareTag("Weapon"))
             {
                 _animator.SetBool("Hit", true);
+                _mobStatus.Hp -= 10;
             }
         }
 
